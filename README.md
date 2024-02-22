@@ -17,7 +17,7 @@ The script reads the dataset from a CSV file and renames the columns for better 
 ### Question 1: What percent of orders are under-authorized?
 First, we calculate the percentage of under-authorized orders and plots a pie chart to visualize the distribution of under-authorized and authorized orders.
 
-PIE CHAR  - PLOT 1
+![alt text](images/plot1.png)
 
 The percentage of orders that are under-authorized is: 57.58%
 
@@ -26,7 +26,7 @@ The percentage of orders that are under-authorized is: 57.58%
 This time, we calculate the percentage of orders that would be correctly authorized with incremental authorization (20% increase in products total) and also plots a pie chart to visualize the distribution of authorized and under-authorized orders.
 
 
-PIE CHAR  - PLOT 2
+![alt text](images/plot2.png)
 
 
 Now, the percentage of orders that are under authorized is: 69.03%. The under authorized orders rise approximately 12%
@@ -40,33 +40,31 @@ For simplifying the plot, we grouped all countries representing less than 2% of 
 
 We’ve plot the results with a  pie chart.
 
-
-SAY SOMETHING ABOUT COUNTRIES 
-
-
-## 3. Results --CHANGE 
-The script will print the percentage of under-authorized orders, the percentage of orders that would be correctly authorized with incremental authorization, and display pie charts showing the distribution of under-authorized and authorized orders and the distribution of under-authorized orders by country.
-
-## 4. For the remainder of orders that would be outside of incremental auth what values would be necessary to capture the remaining amount?
-
-we initially created a new column that demonstrated the products_total column but with a 20% increase which showed the products_total with the incremental increase. 
-
-Following this we had to create a new column that showed the difference in the values of the new products_total and the 
-purchase_total_price we did this by creating a new list with the default of the difference being zero and when the products_total 
-is smaller than the purchase_total_price it subtracts the products_total from the purchase_total_price to find the difference.
+![alt text](images/plot3.png)
 
 
+#### Question 4: For the remainder of orders that would be outside of incremental auth what values would be necessary to capture the remaining amount?
 
 
-## 4. Conclusion
-This EDA provides insights into the authorization status of orders from Fake partners and the potential impact of incremental authorization. Further analysis and modeling can be performed to understand the price fluctuation of past orders and assess the risk of moving to an authorize-and-capture model.
+We initially created a new column that demonstrated the products_total column but with a 20% increase which showed the products_total with the incremental increase. 
+
+Following this we had to create a new column that showed the difference in the values of the new products_total and the purchase_total_price we did this by creating a new list with the default of the difference being zero and when the products_total is smaller than the purchase_total_price it subtracts the products_total from the purchase_total_price to find the difference.
 
 
+#### Question 5: Which stores are the most problematic in terms of orders and monetary value?
 
-## 5. 
+For answering this question, we create a subset of the original dataframe,then calculate the unpaid amount for each order, filters the dataframe for unpaid orders, groups the data by store address, and calculates the total unpaid amount for each store. Finally, it visualizes the top 10 stores with the highest unpaid amounts using a bar plot.
+
+![alt text](images/plot4.png)
 
 
-## 6. For under-auth orders is there a correlation between the difference in the prices and the cancellation of the order? In other words: Is an order more likely to be cancelled as the price difference increases?
+The code analyzes the cancellation rate by stores. We see that we have many stores with very high cancellation ratios. It is difficult to answer the question of which ones exactly because having such a high number makes it impossible to make a distinction.
+In this table, we can see the number of stores and the cancellation ratio they have (canceled orders over all orders).
+
+![alt text](images/Table1.png)
+
+
+#### Question 6:  Is an order more likely to be cancelled as the price difference increases?
 
 We approached this by creating a scatter plot that demonstrated all the price differences and whether the order was cancelled or delivered. 
 
