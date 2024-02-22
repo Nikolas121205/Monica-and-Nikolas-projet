@@ -50,6 +50,9 @@ We initially created a new column that demonstrated the products_total column bu
 
 Following this we had to create a new column that showed the difference in the values of the new products_total and the purchase_total_price we did this by creating a new list with the default of the difference being zero and when the products_total is smaller than the purchase_total_price it subtracts the products_total from the purchase_total_price to find the difference.
 
+![alt text](images/Table2.png)
+
+
 
 #### Question 5: Which stores are the most problematic in terms of orders and monetary value?
 
@@ -70,6 +73,8 @@ We approached this by creating a scatter plot that demonstrated all the price di
 
 Additionally we used numpy to create the correlation coefficient to determine the amount of correlation there is between the 
 amount of the price difference and whether it was correlated. 
+
+![alt text](images/plot6.png)
 
 ## 6. Conclusion 
 
